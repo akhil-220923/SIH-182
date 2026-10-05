@@ -3,6 +3,9 @@
 > **Smart India Hackathon (SIH) — Problem Statement 182**  
 > **Automated Attribution of Unknown Cryptocurrency Wallets to Nearest Virtual Asset Service Providers (VASPs) through Blockchain Intelligence APIs**
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/akhil-220923/SIH-182)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/new?template=https://github.com/akhil-220923/SIH-182)
+
 ---
 
 ## Project Overview
