@@ -31,9 +31,13 @@ COPY --from=frontend-builder /app/dist /app/frontend/dist
 
 # Set runtime environment variables
 ENV PYTHONPATH=/app
+ENV FRONTEND_DIST_DIR=/app/frontend/dist
+ENV REPORT_DIR=/app/reports
 ENV HOST=0.0.0.0
 ENV PORT=8000
 EXPOSE 8000
+
+RUN mkdir -p /app/reports
 
 # Health check
 HEALTHCHECK --interval=10s --timeout=5s --start-period=15s --retries=3 \
