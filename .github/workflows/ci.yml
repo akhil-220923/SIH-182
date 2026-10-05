@@ -57,9 +57,9 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: backend/Dockerfile
+          file: Dockerfile
           push: false
-          tags: tracevasp-backend:latest
+          tags: tracevasp:latest
 
   deploy:
     name: Production Deployment Trigger

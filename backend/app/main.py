@@ -105,7 +105,7 @@ app.include_router(audit_router, prefix="/api")
 app.include_router(search_router, prefix="/api")
 
 # Serve Frontend Single Page Application (Unified Single-Link Deployment)
-dist_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "dist"))
+dist_dir = os.environ.get("FRONTEND_DIST_DIR") or os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "dist"))
 if os.path.exists(dist_dir):
     assets_dir = os.path.join(dist_dir, "assets")
     if os.path.exists(assets_dir):

@@ -1,4 +1,5 @@
 # Multi-stage Dockerfile: Builds frontend assets and starts production FastAPI backend
+# Enables single-container full-stack deployment on any cloud host (Render, Railway, Fly.io, Cloud Run, AWS, VPS)
 
 # Stage 1: Build Frontend Assets
 FROM node:20-alpine AS frontend-builder

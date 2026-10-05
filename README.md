@@ -290,23 +290,46 @@ Key routes:
 
 ---
 
-## Production Deployment
+## Permanent Cloud Deployment
 
-### Single-Container Deployment (Render / Cloud Run / Railway / VPS)
-The `backend/Dockerfile` uses a multi-stage build that compiles the frontend SPA and embeds it directly into the Python container. Setting `PORT` allows the entire application to be served from a single port without an external proxy.
+TraceVASP is fully containerized and production-ready for zero-downtime, permanent cloud hosting. It does **not** require any local machine, WSL, terminal, or temporary tunnel to remain accessible.
 
-### Multi-Container Deployment (Docker Compose / EC2 / K8s)
-Use the included `docker-compose.yml` to spin up PostgreSQL, the FastAPI backend, and the Nginx frontend reverse proxy.
+For full, step-by-step instructions across Render, Railway, Fly.io, and Cloud VPS, see:
+📖 **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**
+
+### Supported Cloud Deployments
+
+1. **Render (1-Click Blueprint):**
+   - Repository: `https://github.com/akhil-220923/SIH-182.git`
+   - Blueprint: `render.yaml` automatically sets up the Web Service and PostgreSQL database.
+   - Permanent HTTPS URL: `https://sih-182-tracevasp.onrender.com`
+
+2. **Railway:**
+   - Deploys automatically via `railway.json` and the root `Dockerfile`.
+   - Permanent HTTPS URL: `https://sih-182-production.up.railway.app`
+
+3. **Fly.io:**
+   - Deploys via `fly.toml` with global edge caching and automatic SSL.
+
+4. **Multi-Container Cloud VPS (AWS / GCP / DigitalOcean / Hetzner):**
+   - Run via Docker Compose:
+     ```bash
+     docker compose up -d --build
+     ```
+
+### Automated CI/CD (GitHub Actions)
+Every `git push` to `main` executes `.github/workflows/ci.yml` which validates Python unit tests, builds the Vite frontend bundle, tests the Docker container, and triggers automated cloud redeployment.
 
 ---
 
 ## GitHub Repository
 
-```bash
-git remote add origin https://github.com/<USERNAME>/SIH-182.git
-git branch -M main
-git push -u origin main
-```
+- **Repository:** [https://github.com/akhil-220923/SIH-182](https://github.com/akhil-220923/SIH-182)
+- **Clone:**
+  ```bash
+  git clone https://github.com/akhil-220923/SIH-182.git
+  cd SIH-182
+  ```
 
 ---
 
