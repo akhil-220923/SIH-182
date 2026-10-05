@@ -28,6 +28,6 @@ services:
 databases:
   - name: tracevasp-postgres
     databaseName: tracevasp
-    user: postgres
+    user: tracevasp_admin
     region: oregon
     plan: free
